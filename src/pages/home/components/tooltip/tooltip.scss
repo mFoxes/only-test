@@ -1,0 +1,87 @@
+.tooltip {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    gap: 78px;
+
+    
+    @media (max-width: 769px) {
+        gap: 0;
+    }
+
+    &__divider {
+        content: '';
+        width: 6px;
+        height: 100%;
+
+        
+        @media (max-width: 769px) {
+            display: none;
+        }
+    }
+
+    &__container {
+        font-weight: 400;
+        font-size: 14px;
+        color: #42567a;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        
+        @media (max-width: 769px) {
+            gap: 10px;
+        }
+    }
+
+
+    &__button {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border: 1px solid rgba(66, 86, 122, 0.5);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+
+        
+        @media (max-width: 769px) {
+            width: 25px;
+            height: 25px;
+        }
+
+        &:hover:not(.disabled) {
+            background-color: white;
+        }
+
+        &-wrapper {
+            display: flex;
+            gap: 20px;
+
+            @media (max-width: 769px) {
+                gap: 8px;
+            }
+        }
+
+        & svg {
+            stroke: #42567A;
+
+            @media (max-width: 769px) {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+        &.right svg {
+            transform: rotate(180deg);
+        }
+
+        &.disabled {
+            opacity: 0.5;
+            transition: 0.5s;
+        }
+    }
+}
